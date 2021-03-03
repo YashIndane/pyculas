@@ -31,7 +31,7 @@ print(A.differentiate())
 ```
 output -
 
-`12x^2-2`
+`(['12x^2','-2'])`
         
 1.If only final expression required
 
@@ -48,18 +48,17 @@ output -
 
 2.To get value at a point
 
-Q. `2x^2+2`
+Q. Find the diffrenciation of `2x^2+2` at x=3. 
 
 ```
 from pyculas import Expression
 A = Expression.algebric(['2x^2' , '2'])
-print(A.differentiate())
+print(A.differentiate(value=3,level=1))
 ```
-
-A = algebric(['2x^2 , '2'] , value=3 , level=1)
-
 output-
 
-`(['4x'] , 12)`        
+`(['4x'] , 12)`     
+
+Here `value` means at which point you want to differentaite and `level` means the nth derivative.
 
 
