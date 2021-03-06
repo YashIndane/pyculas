@@ -47,7 +47,7 @@ output -
 
 2.To get value at a point
 
-Q. Find the diffrenciation of `2x^2+2` at x=3. 
+Q. Find the differrentiation of `2x^2+2` at x=3. 
 
 ```
 A = Expression.algebric(['2x^2' , '2'])
@@ -57,6 +57,6 @@ output-
 
 `(['4x'] , 12)`     
 
-Here `value` means at which point you want to differentaite and `level` means the nth derivative.
+Here `value` means at which point you want to differentiate and `level` means the nth derivative.
 
 
