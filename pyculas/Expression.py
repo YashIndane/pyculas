@@ -1,16 +1,16 @@
 import re
 from pyculas.comb import simplify
 
-class algebric:
+class algebraic:
     """
         This class takes a list of terms in a polynomial expression
         example -
         If you have 4x^3 - 2x + 6, then create the object as follows -
-        A = algebric(['4x^3' , '-2x' , '6'])
+        A = algebraic(['4x^3' , '-2x' , '6'])
     """
 
     def __init__(self, expressionList : list):
-        # simplifying the algebric expression
+        # simplifying the algebraic expression
         self.expressionList = simplify(expressionList)
         
     def differentiate(self , value : float = None , level : int = 1) -> tuple:
@@ -20,14 +20,14 @@ class algebric:
         
         1.If only final expression required
         example -
-        A = algebric(['2x^2' , '2'])
+        A = algebraic(['2x^2' , '2'])
         print(A.differentiate())
 
         output -
         ['4x']
 
         2.To get value at a point
-        A = algebric(['2x^2 , '2'] , value=3 , level=1)
+        A = algebraic(['2x^2 , '2'] , value=3 , level=1)
 
         output-
         (['4x'] , 12)
