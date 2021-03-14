@@ -25,7 +25,7 @@ from pyculas import Expression
 
 If you have 4x^3 - 2x + 6, then create the object as follows -
 
-A = Expression.algebraic(["4x^3 - 2x + 6"])
+A = Expression.algebraic("4x^3 - 2x + 6")
 
 This method differentiates a polynomial expression at a given value and outputs the final expression.
 
@@ -38,7 +38,7 @@ Output:
 Q. `2x^2+2`
 
 ```
-A = Expression.algebraic(["2x^2 + 2"])
+A = Expression.algebraic("2x^2 + 2")
 print(A.differentiate())
 ```
 Output:
@@ -50,7 +50,7 @@ Output:
 Q. Find the differentiation of `2x^2+2` at x=3. 
 
 ```
-A = Expression.algebraic(["2x^2 + 2"])
+A = Expression.algebraic("2x^2 + 2")
 print(A.differentiate(value=3,level=1))
 ```
 Output:
