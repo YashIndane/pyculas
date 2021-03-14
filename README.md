@@ -58,5 +58,3 @@ Output:
 `(['4x'] , 12)`     
 
 Here `value` means at which point you want to differentiate and `level` means the nth derivative.
-
-
