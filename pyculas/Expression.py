@@ -1,17 +1,17 @@
 import re
-from pyculas.comb import simplify
+from pyculas.formats import simplify , toarray , tostring
 
 class algebraic:
     """
-        This class takes a list of terms in a polynomial expression
+        This class takes a string of the polynomial expression 
         example -
         If you have 4x^3 - 2x + 6, then create the object as follows -
-        A = algebraic(['4x^3' , '-2x' , '6'])
+        A = algebraic(["4x^3 - 2x + 6"])
     """
 
-    def __init__(self, expressionList : list):
+    def __init__(self, expressionString : str):
         # simplifying the algebraic expression
-        self.expressionList = simplify(expressionList)
+        self.expressionList = simplify(toarray(expressionString))
         
     def differentiate(self , value : float = None , level : int = 1) -> tuple:
         """
@@ -20,17 +20,14 @@ class algebraic:
         
         1.If only final expression required
         example -
-        A = algebraic(['2x^2' , '2'])
+        A = algebraic(["2x^2 + 2"])
         print(A.differentiate())
-
         output -
-        ['4x']
-
+        ('4x' , None)
         2.To get value at a point
-        A = algebraic(['2x^2 , '2'] , value=3 , level=1)
-
+        A = algebraic(["2x^2 + 2"] , value=3 , level=1)
         output-
-        (['4x'] , 12)
+        ('4x' , 12)
         """
         
         exList = self.expressionList
@@ -96,6 +93,6 @@ class algebraic:
                     exList = diff_exp    
 
         try:
-           return (diff_exp , float("{0:.3f}".format(sum(diff_value)))) if value != None else diff_exp
+           return (tostring(diff_exp) , float("{0:.3f}".format(sum(diff_value)))) if value != None else (tostring(diff_exp) , None)
         except Exception as e:
-           return (diff_exp , "{0:.3f}".format(sum(diff_value)))
+           return (tostring(diff_exp) , "{0:.3f}".format(sum(diff_value))) 
