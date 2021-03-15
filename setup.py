@@ -5,7 +5,7 @@ with open("README.md" , "r") as f:
 
 setuptools.setup(
       name="pyculas",
-      version="1.0.5",
+      version="1.0.6",
       author="Yash Indane",
       author_email="yashindane46@gmail.com",
       description="calculas python library",
