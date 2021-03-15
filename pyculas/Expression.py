@@ -74,7 +74,9 @@ class algebraic:
 
                             final_coefficient = "{0:.3f}".format(final_coefficient)  
                             final_power = "{0:.3f}".format(final_power) 
-                            final_exp = f'{final_coefficient}x^{final_power}' if final_power != 1 else f'{final_coefficient}x'    
+                            final_exp = f'{final_coefficient}x^{final_power}' if final_power != 1 else f'{final_coefficient}x'  
+                            final_exp = final_exp.replace("x^1.000", "x")
+                            final_exp = final_exp.replace("x^0.000" , "")  
                             diff_exp.append(final_exp)
 
                     #for no coefficient but with any power 
@@ -88,11 +90,13 @@ class algebraic:
                             final_coefficient = "{0:.3f}".format(final_coefficient)
                             final_power = "{0:.3f}".format(final_power)
                             final_exp = f'{final_coefficient}x^{final_power}' if final_power != 1 else f'{final_coefficient}x'
+                            final_exp = final_exp.replace("x^1.000", "x")
+                            final_exp = final_exp.replace("x^0.000" , "") 
                             diff_exp.append(final_exp)
 
                     exList = diff_exp    
-
+        
         try:
            return (tostring(diff_exp) , float("{0:.3f}".format(sum(diff_value)))) if value != None else (tostring(diff_exp) , None)
         except Exception as e:
-           return (tostring(diff_exp) , "{0:.3f}".format(sum(diff_value))) 
+           return (tostring(diff_exp) , "{0:.3f}".format(sum(diff_value)))
