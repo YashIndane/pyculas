@@ -80,7 +80,7 @@ def tostring(q : list) -> str:
 
         if x != 0 :
 
-            if '-' in q[x] : fin_exp +=  f'- {q[x][1:]} '    
+            if '-' == q[x][0] : fin_exp +=  f'- {q[x][1:]} '    
 
             else : fin_exp += f'+ {q[x]} '                   
 
