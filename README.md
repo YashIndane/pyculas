@@ -3,7 +3,7 @@
 
 # pyculas
 
-![](pyculaslogo.png)
+![pyculaslogo](https://user-images.githubusercontent.com/53041219/207028646-46ab3c14-278d-4440-b32e-ffe4b987e024.png)
 
 # Installation Instructions
 use pip or pip3 to install the library.
